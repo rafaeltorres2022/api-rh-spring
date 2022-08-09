@@ -1,4 +1,4 @@
-package com.rh.api.Entities;
+package com.rh.api.entities;
 
 import java.util.HashSet;
 

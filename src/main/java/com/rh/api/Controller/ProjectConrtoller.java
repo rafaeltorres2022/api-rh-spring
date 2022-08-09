@@ -1,4 +1,4 @@
-package com.rh.api.Controller;
+package com.rh.api.controller;
 
 import org.springframework.stereotype.Controller;
 

@@ -1,4 +1,4 @@
-package com.rh.api.Entities;
+package com.rh.api.entities;
 
 import java.util.HashSet;
 
@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.lang.NonNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,6 +27,8 @@ public class EmployeeEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
+    @NonNull
     private String name;
+    
     private HashSet<ProjectEntity> projects;
 }

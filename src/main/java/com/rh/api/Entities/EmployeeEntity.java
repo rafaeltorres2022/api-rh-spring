@@ -1,12 +1,15 @@
 package com.rh.api.entities;
 
-import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.lang.NonNull;
 
@@ -24,11 +27,13 @@ import lombok.Setter;
 public class EmployeeEntity {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(columnDefinition = "serial")
     private Long id;
     
-    @NonNull
+    @NotNull
     private String name;
     
-    private HashSet<ProjectEntity> projects;
+    @ManyToMany(mappedBy = "employees")
+    private Set<ProjectEntity> projects;
 }
